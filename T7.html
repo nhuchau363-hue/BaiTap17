@@ -4,4 +4,31 @@
 const numbers = [1, 5, 10, 2];
 const sum = numbers.reduce((acc, current) => acc + current, 0);
 document.getElementById("sum-output").textContent = "Tổng mảng: " + sum;
-</script>
+</script><!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>T7 - Tính tổng mảng</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+        h2 { color: #667eea; }
+        .result { padding: 20px; margin: 20px 0; background: #48bb78; color: white; border-radius: 5px; text-align: center; font-size: 20px; }
+        a { display: inline-block; margin-top: 20px; color: #667eea; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài T7 - Tính tổng mảng</h2>
+        <p>Mảng: [1, 5, 10, 2]</p>
+        <div class="result" id="sum-output"></div>
+        <a href="index.html">← Trang chủ</a>
+    </div>
+
+    <script>
+        const numbers = [1, 5, 10, 2];
+        const sum = numbers.reduce((acc, current) => acc + current, 0);
+        document.getElementById("sum-output").textContent = `Tổng = ${sum}`;
+    </script>
+</body>
+</html>

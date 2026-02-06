@@ -14,4 +14,65 @@ function calculateBMI() {
     else type = "Thừa cân";
     document.getElementById("bmi-result").textContent = `BMI: ${bmi} - ${type}`;
 }
-</script>
+</script><!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>TK8 - Tính BMI</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+        h2 { color: #667eea; }
+        .form-group { margin: 15px 0; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 10px; border: 2px solid #ddd; border-radius: 5px; }
+        button { width: 100%; padding: 12px; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { background: #5568d3; }
+        #result { margin-top: 20px; padding: 20px; background: #f0f0f0; border-radius: 5px; text-align: center; display: none; }
+        .bmi-value { font-size: 30px; font-weight: bold; color: #667eea; }
+        a { display: inline-block; margin-top: 20px; color: #667eea; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài TK8 - Tính chỉ số BMI</h2>
+        <div class="form-group">
+            <label>Cân nặng (kg):</label>
+            <input type="number" id="weight" placeholder="VD: 70" step="0.1">
+        </div>
+        <div class="form-group">
+            <label>Chiều cao (m):</label>
+            <input type="number" id="height" placeholder="VD: 1.75" step="0.01">
+        </div>
+        <button onclick="calculateBMI()">Tính BMI</button>
+        <div id="result"></div>
+        <a href="index.html">← Trang chủ</a>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById("weight").value);
+            const height = parseFloat(document.getElementById("height").value);
+            
+            if (!weight || !height) {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+            
+            const bmi = weight / (height * height);
+            let category = "";
+            
+            if (bmi < 18.5) category = "Thiếu cân";
+            else if (bmi < 25) category = "Bình thường";
+            else if (bmi < 30) category = "Thừa cân";
+            else category = "Béo phì";
+            
+            document.getElementById("result").innerHTML = `
+                <div class="bmi-value">${bmi.toFixed(2)}</div>
+                <div>${category}</div>
+            `;
+            document.getElementById("result").style.display = "block";
+        }
+    </script>
+</body>
+</html>

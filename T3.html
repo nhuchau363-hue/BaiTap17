@@ -14,4 +14,46 @@ function filterList() {
         list[i].style.display = text.toUpperCase().indexOf(filter) > -1 ? "" : "none";
     }
 }
-</script>
+</script><!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>T3 - Lọc danh sách</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; }
+        h2 { color: #667eea; }
+        input { width: 100%; padding: 10px; margin: 10px 0; font-size: 16px; border: 2px solid #667eea; border-radius: 5px; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px; margin: 5px 0; background: #f0f0f0; border-radius: 5px; }
+        a { display: inline-block; margin-top: 20px; color: #667eea; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Bài T3 - Lọc danh sách</h2>
+        <input type="text" id="search" placeholder="Tìm kiếm...">
+        <ul id="my-list">
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C++</li>
+            <li>Ruby</li>
+            <li>PHP</li>
+        </ul>
+        <a href="index.html">← Trang chủ</a>
+    </div>
+
+    <script>
+        function filterList() {
+            const filter = document.getElementById("search").value.toUpperCase();
+            const list = document.getElementsByTagName("li");
+            for (let i = 0; i < list.length; i++) {
+                const text = list[i].textContent || list[i].innerText;
+                list[i].style.display = text.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+        document.getElementById("search").addEventListener("input", filterList);
+    </script>
+</body>
+</html>
