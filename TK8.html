@@ -1,20 +1,4 @@
-<input type="number" id="weight" placeholder="Cân nặng (kg)">
-<input type="number" id="height" placeholder="Chiều cao (m)">
-<button onclick="calculateBMI()">Tính BMI</button>
-<div id="bmi-result"></div>
-
-<script>
-function calculateBMI() {
-    const weight = parseFloat(document.getElementById("weight").value);
-    const height = parseFloat(document.getElementById("height").value);
-    const bmi = (weight / (height * height)).toFixed(2);
-    let type = "";
-    if (bmi < 18.5) type = "Thiếu cân";
-    else if (bmi < 25) type = "Bình thường";
-    else type = "Thừa cân";
-    document.getElementById("bmi-result").textContent = `BMI: ${bmi} - ${type}`;
-}
-</script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">

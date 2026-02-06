@@ -1,22 +1,4 @@
-<form id="reg-form">
-    <input type="password" id="pass1" placeholder="Mật khẩu">
-    <input type="password" id="pass2" placeholder="Nhập lại mật khẩu">
-    <button type="submit">Đăng ký</button>
-    <div id="error-msg" style="color:red"></div>
-</form>
-
-<script>
-document.getElementById("reg-form").addEventListener("submit", function(e) {
-    const p1 = document.getElementById("pass1").value;
-    const p2 = document.getElementById("pass2").value;
-    if (p1 !== p2) {
-        e.preventDefault();
-        document.getElementById("error-msg").textContent = "Mật khẩu không khớp!";
-    } else {
-        document.getElementById("error-msg").textContent = "";
-    }
-});
-</script><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
