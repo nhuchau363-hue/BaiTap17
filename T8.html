@@ -1,13 +1,54 @@
-<input type="number" id="num-input" placeholder="Nhập số n">
-<button onclick="generateMultiplicationTable(document.getElementById('num-input').value)">Tạo</button>
-<pre id="table-output"></pre>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài T8 - Bảng cửu chương</title>
+    <style>
+        /* Định dạng tiêu đề chữ màu xanh */
+        h2 {
+            color: blue;
+        }
+        /* Định dạng nút quay lại cho đẹp */
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .back-btn:hover {
+            background-color: #e0e0e0;
+        }
+        pre {
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid blue;
+        }
+    </style>
+</head>
+<body>
 
-<script>
-function generateMultiplicationTable(n) {
-    let output = "";
-    for (let i = 1; i <= 10; i++) {
-        output += `${n} x ${i} = ${n * i}\n`;
-    }
-    document.getElementById("table-output").textContent = output;
-}
-</script>
+    <h2>Bài T8 - Bảng cửu chương số 7</h2>
+
+    <pre id="table-output"></pre>
+
+    <script>
+        function generateMultiplicationTable(n) {
+            let output = "";
+            for (let i = 1; i <= 10; i++) {
+                output += `${n} x ${i} = ${n * i}\n`;
+            }
+            document.getElementById("table-output").textContent = output;
+        }
+
+        // Tự động chạy bảng cửu chương số 7 khi mở trang
+        generateMultiplicationTable(7);
+    </script>
+
+    <a href="index.html" class="back-btn">⬅ Trang chủ</a>
+
+</body>
+</html>
